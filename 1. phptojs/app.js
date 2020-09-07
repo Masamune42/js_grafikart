@@ -1,4 +1,5 @@
 // Ici c'est du code JS !
+// BASES :
 // 1.
 // ; non obligatoire, compris par JS
 // comprend une déclaration sans var mais conseillé de le mettre
@@ -90,6 +91,7 @@ demo2() // vaut 9;
 c // vaut 1
 
 // CLASSES
+// 1.
 var eleve = {
     nom: "Eleve",
     moyenne: function () {
@@ -105,8 +107,93 @@ jean.nom // retourne "Eleve", c'est le prototype
 jean.nom = "Jean";
 jean.nom // retourne "Jean"
 
-// Déifnition d'une fonction sur une instance
-jean.parler = function() { return 'Salut'; }
+// Définition d'une fonction sur une instance
+jean.parler = function () { return 'Salut'; }
 
-// Modifier le prototype
-eleve.present = function() { return "Salut"; }
+// Modifier le prototype d'une fonction existante
+eleve.present = function () { return "Salut"; }
+
+// En JS, on peut construire des objets via une méthode
+// Il faut créer une fonction
+// Construteur avec un prototype avec méthodes
+// Plus utilisé
+var Eleve = function (nom) {
+    this.nom = nom;
+}
+
+// Ajout d'une méthode en prototype pouvant évoluer ex: ajouter "parler"
+Eleve.prototype.moyenne = function () {
+    return 10;
+}
+
+var marc = new Eleve('Marc'); // variable d'instance de type Eleve, avec un nom : Marc
+
+"1".__proto__ // Affiche toutes les fonctions en prototype pour un string
+
+// Ajout à toutes les string une méthode prototype
+String.prototype.test = function () { return this + "test" }
+
+// 2. 
+var Session = {
+    get: function () {
+
+    }
+};
+
+Session.get();
+
+// 3. 
+// Très peu utilisé car complexe
+Eleve.prototype.present = function () {
+    return this.nom + " présent !";
+}
+
+var Delegue = function (nom) {
+    Eleve.call(this, nom); // constructeur qui utilise un autre système / extends
+    this.role = "delegue";
+}
+
+// On rajoute au prototype de Delegue, le prototype de Eleve
+Delegue.prototype = Object.create(Eleve.prototype);
+// Redéfinition du constructeur sur Delegue, car les propriétés de Eleve l'ont écrasé
+Delegue.prototype.constructor = Delegue;
+
+Delegue.prototype.moyenne = function () {
+    return 15;
+}
+
+var pierre = new Delegue('Pierre');
+
+// Appelle de fonction
+pierre
+// Delegue avec les propriétés : nom et role
+// Dans le prototype de Delegue : constructeur et moyenne
+// Qui a comme prototype Eleve qui a les méthodes : moyenne et present
+
+pierre.moyenne()
+// Est-ce que pierre a la méthode moyenne? Non.
+// On regarde donc sur le prototype : Oui
+
+pierre.present()
+// Est-ce que pierre a la méthode moyenne? Non.
+// On regarde donc sur le prototype : Non
+// On regarde sur le prototype du prototype : Oui
+
+// FOREACH
+// 
+Eleve.prototype.moyenne = function () {
+    var somme = 0;
+
+    this.notes.forEach(function(note) {
+        somme += note;
+    })
+    // Equivalent
+    // for (var i = 0; i < this.notes.length; i++) {
+    //     somme += this.notes[i];
+    // }
+    return Math.round(somme / this.notes.length);
+}
+
+jean.notes = [10, 12];
+jean.moyenne() // 11
+
