@@ -23,3 +23,4 @@ Il n'y a pas de documentation JS officielle mais par exemple sur les sites suiva
 #### Notes sur les instructions du site
 - On peut y trouver les objets natifs et leurs fonctions
 - "prototype" s'utilise sur l'instance
+- On peut trouver des "shim" qui sont des morceaux de code à implémenter avant le javascript afin que les navigateurs qui n'utilisent pas normalement les fonctions que l'on souahite en JS, puissent le faire
