@@ -6,6 +6,11 @@
 - Résumé : https://www.grafikart.fr/tutoriels/window-773
 - Si on met le JS dans le head de la page : sensation de ralentissement de la page, le reste de la page de ne sera pas chargé avant
 
+## Partie 3 : DOM
+- Résumé : https://www.grafikart.fr/tutoriels/dom-774
+
+## Partie 3 : Les évènements
+- Résumé : https://www.grafikart.fr/tutoriels/events-775
 
 ## Points importants
 - this en JS fait toujours référence au contexte parent

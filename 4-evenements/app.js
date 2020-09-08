@@ -57,7 +57,9 @@ document.querySelector('#a').addEventListener('keydown', function (e) {
 })
 
 var cp = document.querySelector('#cp');
+// Focus sur le champs lors du chargement de la page
 cp.focus();
+
 // Vérification d'un formulaire avant soumission
 document.querySelector('#form').addEventListener('submit', function (e) {
     var mentions = document.querySelector('#mentions');
@@ -69,11 +71,12 @@ document.querySelector('#form').addEventListener('submit', function (e) {
         alert('Le code postal n\'est pas bon !');
         e.preventDefault();
     }
-    // Si la taille du cp est différent de 5
+    // Si la taille la checkbox est cochée
     if (!mentions.checked) {
         alert('Vous n\'avez pas accepté les CGU!');
         e.preventDefault();
     }
+    // Vérifie si le select contient un chiffre supérieur à 18
     if(age < 18)
     {
         alert('Vous ne pouvez pas entrer !');
