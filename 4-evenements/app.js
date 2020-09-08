@@ -43,3 +43,40 @@ var onClick = function (e) {
 }
 
 s.addEventListener('click', onClick);
+
+// Empêche l'utilisateur d'écrire des lettres non voulues
+document.querySelector('#a').addEventListener('keydown', function (e) {
+    // OLD
+    // var lettre = String.fromCharCode(e.keyCode);
+    // NEW
+    var lettre = e.key;
+
+    if (lettre != "a") {
+        e.preventDefault();
+    }
+})
+
+var cp = document.querySelector('#cp');
+cp.focus();
+// Vérification d'un formulaire avant soumission
+document.querySelector('#form').addEventListener('submit', function (e) {
+    var mentions = document.querySelector('#mentions');
+    var age = parseInt(document.querySelector('#age').value, 10);
+    
+    
+    // Si la taille du cp est différent de 5
+    if (cp.value.length != 5) {
+        alert('Le code postal n\'est pas bon !');
+        e.preventDefault();
+    }
+    // Si la taille du cp est différent de 5
+    if (!mentions.checked) {
+        alert('Vous n\'avez pas accepté les CGU!');
+        e.preventDefault();
+    }
+    if(age < 18)
+    {
+        alert('Vous ne pouvez pas entrer !');
+        e.preventDefault();
+    }
+})
