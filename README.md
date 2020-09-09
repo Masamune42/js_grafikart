@@ -18,6 +18,7 @@
 - Closure :
     - PHP : Classe utilisée pour créer des fonctions anonymes, fonction anonyme = Closure
     - JS : Fonction qui enferme une autre fonction et qui lui donne un contexte local
+- Au début il faut essayer de décrire ce que l'on veut faire en commentaire. Si on passe par un "Lorsque l'on..." on utilise un évènement.
 
 ## Tips
 ### Documentation JavaScript
