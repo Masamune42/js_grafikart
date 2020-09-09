@@ -13,21 +13,30 @@
 
 <body>
 
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos commodi aspernatur officiis
-        sed nulla
-        voluptatibus dolor explicabo quo, dignissimos, quia ea eveniet sint odit deserunt possimus doloribus hic, id
-        natus!
-    </p>
-    <p class="spoiler">
-        Monsieur X meurt à la fin
-    </p>
-    <p>
-        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos commodi aspernatur officiis sed</span>
-        <span>Nulla voluptatibus <span class="spoiler">dolor explicabo quo</span>, dignissimos, quia ea eveniet sint odit</span>
-        <span>deseruntpossimus doloribus hic, id natus!</span>
-    </p>
+    <div>
+        <ul class="tabs">
+            <li class="active"><a href="#home">Accueil</a></li>
+            <li><a href="#mentions">Mentions</a></li>
+            <li><a href="#about">A propos</a></li>
+        </ul>
+        <div class="tabs-content">
+            <div class="tab-content active" id="home">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, laborum laboriosam?
+                Aliquam
+                debitis dolor illum. Nobis dolorum est nesciunt ipsam ullam cum necessitatibus assumenda. Suscipit
+                similique
+                cum omnis quasi modi.</div>
+            <div class="tab-content" id="mentions">Pariatur, laborum laboriosam? Aliquam
+                debitis dolor illum. Nobis dolorum est nesciunt ipsam ullam cum necessitatibus assumenda. Suscipit
+                similique
+                cum omnis quasi modi.</div>
+            <div class="tab-content" id="about">Aliquam
+                debitis dolor illum. Nobis dolorum est nesciunt ipsam ullam cum necessitatibus assumenda. Suscipit
+                similique
+                cum omnis quasi modi.</div>
+        </div>
+    </div>
 
-    <script type="text/javascript" src="spoiler.js"></script>
+    <script type="text/javascript" src="tabs.js"></script>
 
 </body>
 
