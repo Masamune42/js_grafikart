@@ -2,6 +2,11 @@
     // On sélectionne les liens dans la div de class tabs
     var tabs = document.querySelectorAll('.tabs a');
 
+    /**
+     * Fonction permettant d'afficher et masquer les onglets
+     * @param {*} a représente un lien 
+     * @param {*} animations booléen déterminant si on active les animations
+     */
     var afficherOnglet = function (a, animations) {
         if (animations === undefined) {
             animations = true;
@@ -35,6 +40,7 @@
         if (animations) {
             // On ajoute la class fade sur l'élément actif
             activeTab.classList.add('fade');
+            // On retire la class in pour faire disparaitre l'élément
             activeTab.classList.remove('in');
             var transitionend = function () {
                 // On retire la class fade et active
@@ -43,8 +49,9 @@
                 // On ajoute la class active et fade à l'élément à afficher
                 aAfficher.classList.add('fade');
                 aAfficher.classList.add('active');
+                // Force le navigateur à interpréter les changements déjà appliqués avant de faire la suite
                 aAfficher.offsetWidth;
-                // On ajoute la class in
+                // On ajoute la class in pour faire apparaitre le menu
                 aAfficher.classList.add('in');
                 // Supprimer l'évènement actuel
                 // Permet d'éviter que les animations se chevauchent et d'avoir plusieurs textes en même temps
@@ -66,6 +73,10 @@
 
     }
 
+    /**
+     * Fonction permettant d'afficher l'onglet sélectionné dans le hash du lien
+     * @param {*} e évènement, false au chargement de la page
+     */
     var hashChange = function (e) {
         // On récupère l'onglet actif dans le lien
         var hash = window.location.hash
@@ -77,6 +88,7 @@
         }
     }
 
+    // Note perso : appelé 2 fois?
     window.addEventListener('hashchange', hashChange())
     hashChange()
 })()
