@@ -13,7 +13,7 @@
         LOGO
     </div>
 
-    <div class="menu">
+    <div class="menu" data-sticky>
         <a href="#">Item 1</a>
         <a href="#">Item 2</a>
         <a href="#">Item 3</a>
@@ -21,9 +21,35 @@
         <a href="#">Item 5</a>
     </div>
 
-    <div style="height: 4400px;">
-        Du texte
+    <div class="content">
+        <div class="main">
+            <h1>Je suis un titre</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quasi! Harum nemo doloremque eaque at,
+                voluptatem atque cum, explicabo est maxime dolorem sequi laborum nostrum voluptates. Placeat ad voluptas
+                vero!</p>
+            <div style="background-color: #D5D5D5; height: 4000px;"></div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-container">
+                <div class="bloc" data-sticky data-offset="68" data-constraint=".sidebar-container">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit error vero omnis eaque autem blanditiis
+                    quasi
+                    ratione nesciunt pariatur ullam eos amet rerum nulla, animi odio. Asperiores molestias similique
+                    natus!
+                </div>
+                &nbsp;
+                <div class="bloc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit error vero omnis eaque autem blanditiis
+                    quasi
+                    ratione nesciunt pariatur ullam eos amet rerum nulla, animi odio. Asperiores molestias similique
+                    natus!
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- Permet de dire que l'élément sera en dessous du float -->
+    <!-- Ici on s'en sert car on a utilisé des éléments flaot qui ne sont pas comptés dans la hauteur de la page -->
+    <div style="clear: both;"></div>
 
     <script src="fixed.js"></script>
 </body>
