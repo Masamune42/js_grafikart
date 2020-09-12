@@ -25,6 +25,7 @@
 Il n'y a pas de documentation JS officielle mais par exemple sur les sites suivants :
 - https://developer.mozilla.org/fr/docs/Web/JavaScript
 - https://devdocs.io/javascript/
+Pour appeler le site pour recevoir des JSON : https://jsonplaceholder.typicode.com/
 
 #### Notes sur les instructions du site
 - On peut y trouver les objets natifs et leurs fonctions

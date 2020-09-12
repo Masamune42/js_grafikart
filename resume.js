@@ -66,3 +66,73 @@ var next = function () {
     this.removeEventListener('click', next)
 }
 element.addEventListener('click', next)
+
+// AJAX
+// Pour les vieux navigateurs, utiliser le shim
+var getHttpRequest = function () {
+    var httpRequest = false;
+
+    if (window.XMLHttpRequest) { // Mozilla, Safari,...
+        httpRequest = new XMLHttpRequest();
+        if (httpRequest.overrideMimeType) {
+            httpRequest.overrideMimeType('text/xml');
+        }
+    }
+    else if (window.ActiveXObject) { // IE
+        try {
+            httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch (e) {
+            try {
+                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e) { }
+        }
+    }
+
+    if (!httpRequest) {
+        alert('Abandon :( Impossible de créer une instance XMLHTTP');
+        return false;
+    }
+
+    return httpRequest
+}
+
+var xhr = getHttpRequest()
+// OU
+var xhr = new XMLHttpRequest;
+xhr.open('GET', 'http://localhost/demo', true)
+// On envoit un header pour indiquer au serveur que la page est appellée en Ajax
+xhr.setRequestHeader('X-Requested-With', 'xmlhttprequest')
+// On lance la requête
+xhr.send()
+
+// Pour suivre l'évolution de l'appel
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+            xhr.responseText // contient le résultat de la page
+        } else {
+            // Le serveur a renvoyé un status d'erreur
+        }
+    }
+}
+
+// Pour soumettre des informations
+var data = new FormData() 
+data.append('name', 'John Doe')
+data.append('email', 'contact@local.dev')
+
+// On peut récupérer les infos à partir d'un formulaire
+var form = document.querySelector('#form')
+var data = new FormData(form) 
+
+// On soumet les infos pour passer l'objet dans le send
+var xhr = getHttpRequest()
+xhr.open('POST', 'http://localhost/demo', true)
+xhr.setRequestHeader('X-Requested-With', 'xmlhttprequest')
+xhr.send(data)
+
+// On converti au format JSON pour l'utiliser dans les requêtes
+var test = 'UN TRUC EN JSON'
+var items = JSON.parse(test)
