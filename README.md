@@ -12,6 +12,9 @@
 ## Partie 3 : Les évènements
 - Résumé : https://www.grafikart.fr/tutoriels/events-775
 
+## Partie 8 : Ajax
+- Résumé : https://www.grafikart.fr/tutoriels/ajax-780
+
 ## Points importants
 - this en JS fait toujours référence au contexte parent
 - On peut placer debugger dans le code JS pour debugger dans la console
