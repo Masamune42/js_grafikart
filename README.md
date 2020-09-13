@@ -15,6 +15,13 @@
 ## Partie 8 : Ajax
 - Résumé : https://www.grafikart.fr/tutoriels/ajax-780
 
+## Partie 9 : Lodash
+- Site : https://lodash.com/
+- Bibliothèque JS
+- Sur chaque fiche technique des fonction on a accès :
+    - Aux sources
+    - Aux NPM packages
+
 ## Points importants
 - this en JS fait toujours référence au contexte parent
 - On peut placer debugger dans le code JS pour debugger dans la console
