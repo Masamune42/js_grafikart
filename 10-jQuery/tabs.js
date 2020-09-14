@@ -41,3 +41,28 @@ if (hash != "") {
         afficherOnglet($a, 0);
     }
 }
+
+// data : données traduites automatiquement du json
+// jqXHR : Objet qui contient des méthodes comme : readystate... (ressemble à l'objet XMLHttpRequest utilisé en JS pur)
+// textStatus : indique le statut (success)
+var $ul = $('#users');
+
+var $loader = $('<div>Chargement</div>').appendTo($('body'));
+
+// Méthode GET jQuery avec le lien de la page appelée
+// Existe aussi en POST
+$.get('https://jsonplaceholder.typicode.com/users')
+    .done(function (data, textStatus, jqXHR) { // Lorsque la requête est finie
+        // Pour chaque user que l'on reçoit
+        data.forEach(function (user) {
+            // On déclare un point de la liste et on y écrit chaque nom
+            var $li = $('<li>').text(user.name);
+            // On ajoute $li à $ul à chaque fois
+            $li.appendTo($ul);
+        })
+    }).fail(function (jqXHR, textStatus, errorThwrown) { // Si elle échoue
+        console.log('fail')
+    }).always(function () { // Dans tous les cas
+        $loader.remove();
+        console.log('always')
+    })
