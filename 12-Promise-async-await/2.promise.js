@@ -37,6 +37,7 @@ var getPosts = function () {
     return get('https://jsonplaceholder.typicode.com/users').then(function (response) { // 2. Une fois résolu, on utilise la fonction
         // 3. On parse la réponse une fois qu'on l'a
         var users = JSON.parse(response);
+        // throw 'Salut' // Si on envoie un throw, il sera attrapé par le catch du getPosts
         // 4. on refait un appel qui renvoie une promesse
         return get('https://jsonplaceholder.typicode.com/posts?userId=' + users[0].id)
     }).then(function (response) { // 5. Une fois la promesse du bloc précédent résolue, on appelle la fonction
@@ -45,9 +46,25 @@ var getPosts = function () {
     })
 }
 
-getPosts().then(function (posts) {
+getPosts().then(function (posts) { // le getPosts va renvoyer une promesse
     console.log(posts[0]);
-}).catch(catchError
-).then(function () {
+}).catch(catchError // Si la promesse échoue, on arrive dans le catch
+).then(function () { // Dans tous les cas, on renvoie une promesse qu'on peut utiliser
     console.log('Fin des requêtes AJAX');
 })
+
+/* 
+* Promesses
+* 1. On initialise une promesse
+*    On y place une fonction avec en paramètres resolve et reject : méthodes à appeler en tant que résolution positive et négative
+* let p = new Promise(function(resolve, reject) {
+* ...
+* ... 
+* resolve(...) // 2. On fait un resolve en plaçant des paramètres
+* })
+* 3. On peut soit capturer la réponse, soit l'erreur, qui peuvent être enchainées
+* p.then(function(response) { ... })
+* .then(function(response) { ... })
+* .then(function(response) { ... })... // On peut enchainer plein de then
+* .catch(function(error) { ... })
+*/
