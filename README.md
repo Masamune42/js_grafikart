@@ -28,12 +28,20 @@
 - Eviter les grosses cartes avec différents tracés, que prendre celles avec formes géométriques
 - On peut déterminer via logiciel la taille de l'image svg pour l'utiliser dans le vieBox
 
-## Partie 15 : Menu en vague
+## Partie 16 : Menu en vague
 - Dynamic js permet de créer des animations entre plusieurs propriétés (autre : snap svg mais + complexe)
 - Dynamic js permet de tester sur le site directement les animations et de générer le code à utiliser
 - Affinity Designer pour créer le menu (payant), Inkscape
 Analyse de création du SVG :
 - Ne pas créer un rectangle, car en SVG ça va créer une forme (on veut une animation)
+
+## Partie 17 : Web components
+- Problématique :
+Lorsque l'on fait du JS, c'est pour créer des éléments d'interface riches et pas très pratique de faire ça aujourd'hui.
+<br>
+Par exemple si on veut rajouter un nouveau champs du même type que celui modifié de base dans le js (ex: un champs avec date-picker), il faut lui ré appliquer le date-picker aussi => peu pratique
+<br>
+C'est pour cela que l'on peut utiliser des éléments personnalisés qui contenir sa propre logique, structure et automatiqueement les éléments serton greffés dessus.
 
 ## Points importants
 - this en JS fait toujours référence au contexte parent
