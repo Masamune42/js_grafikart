@@ -22,6 +22,12 @@
     - Aux sources
     - Aux NPM packages
 
+## Partie 15 : Carte interactive en SVG
+- Quand on récupère un SVG, on peut l'analyser avec un logiciel (JavaScriptCarte interactive en SVG) pour comprendre son anatomie
+- Chaque SVG est composé de formes particulières qui sont nommées (utilisés comme ID).
+- Eviter les grosses cartes avec différents tracés, que prendre celles avec formes géométriques
+- On peut déterminer via logiciel la taille de l'image svg pour l'utiliser dans le vieBox
+
 ## Points importants
 - this en JS fait toujours référence au contexte parent
 - On peut placer debugger dans le code JS pour debugger dans la console

@@ -1,0 +1,45 @@
+/* On a mis la carte en float-left, alors il faut contrebalancer avec du CSS pour donenr à la carte la bonne hauteur*/
+.map{
+    overflow: hidden;
+}
+
+.map__image{
+    width: 50%;
+    float: left;
+}
+
+/* Chaque partie du SVG (balise path) */
+.map__image path{
+    /* Couleu de remplissage */
+    fill: #a4ced2; 
+    /* Couleur des bordures */
+    stroke: #FFF;
+    /* Epaisseur des bordures */
+    stroke-width: 1px;
+    /* Transition de 0.3s sur fill quand on passera sur la carte */
+    transition: fill 0.3s;
+}
+
+/* Lorsque que l'on passe sur une partie du SVG - ici une région */
+/* = losrque que l'on passe son curseur sur une région de la carte */
+.map__image .is-active path{
+    fill: #3538d2;
+}
+
+.map__list{
+    float: right;
+    width: 50%;
+}
+
+.map__list a{
+    /* Couleur héritée du parent */
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.map__list a.is-active{
+    fill: #3538d2;
+    font-weight: bold;
+    text-decoration: underline;
+}
