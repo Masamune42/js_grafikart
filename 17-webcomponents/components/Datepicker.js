@@ -3,6 +3,7 @@ export default class Datepicker extends HTMLInputElement {
     // Effectue l'action suivante quand l'élément est connecté
     connectedCallback() {
         this.calendar = flatpickr(this)
+        this.classList.add('form-control');
     }
 
     // Effectue l'action suivante quand l'élément est supprimé
