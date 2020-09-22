@@ -43,6 +43,9 @@ Par exemple si on veut rajouter un nouveau champs du même type que celui modifi
 <br>
 C'est pour cela que l'on peut utiliser des éléments personnalisés qui contenir sa propre logique, structure et automatiqueement les éléments serton greffés dessus.
 
+### Shadow DOM
+
+
 ## Points importants
 - this en JS fait toujours référence au contexte parent
 - On peut placer debugger dans le code JS pour debugger dans la console
