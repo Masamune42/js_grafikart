@@ -31,7 +31,9 @@ class Carousel {
         this.element.appendChild(root);
         // On déplace tous les enfants présents de l'élément dans le container
         this.children.forEach(child => {
-            container.appendChild(child)
+            let item = this.createDivWithClass('carousel__item');
+            item.appendChild(child);
+            container.appendChild(item)
         });
     }
 
