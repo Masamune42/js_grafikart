@@ -46,7 +46,7 @@ C'est pour cela que l'on peut utiliser des éléments personnalisés qui conteni
 
 ## Points importants
 - this en JS fait toujours référence au contexte parent
-- On peut placer debugger dans le code JS pour debugger dans la console
+- On peut placer debugger dans le code JS pour debugger dans la console, grâce à cela on peut regarder pas à pas les valeurs au survol de chaque variable et éléments JS
 - Closure :
     - PHP : Classe utilisée pour créer des fonctions anonymes, fonction anonyme = Closure
     - JS : Fonction qui enferme une autre fonction et qui lui donne un contexte local

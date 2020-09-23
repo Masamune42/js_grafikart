@@ -77,6 +77,36 @@ CAROUSEL
 .carousel__item {
   float: left;
 }
+
+.carousel__next, .carousel__prev {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #FFF url(right.svg) center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  right: -20px;
+  box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.carousel__prev {
+  background-image: url(left.svg);
+  right: auto;
+  left: -20px;
+}
+
+.carousel__next:hover, .carousel__prev:hover {
+  transform: scale(1.2)
+}
+
+
+.carousel__next--hidden, .carousel__prev--hidden {
+  opacity: 0;
+}
 /* 
 
 .carousel__next, .carousel__prev {
@@ -94,19 +124,10 @@ CAROUSEL
   transition: transform 0.3s, opacity 0.3s;
 }
 
-.carousel__next:hover, .carousel__prev:hover {
-  transform: scale(1.2)
-}
 
-.carousel__prev {
-  background-image: url(left.svg);
-  right: auto;
-  left: -20px;
-}
 
-.carousel__next--hidden, .carousel__prev--hidden {
-  opacity: 0;
-}
+
+
 
 .carousel__pagination {
   position: absolute;
