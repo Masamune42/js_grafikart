@@ -45,6 +45,7 @@ form.addEventListener('submit', async function (e) {
         if (response.ok === false) {
             // Définition des erreurs
             let errors = responseData;
+            console.log(errors);
             // On récupère les clés des erreurs retournées
             let errorsKey = Object.keys(errors);
             // Pour chaque clé d'erreur
@@ -68,6 +69,7 @@ form.addEventListener('submit', async function (e) {
             for (let i = 0; i < inputs.length; i++) {
                 inputs[i].value = "";
             }
+            console.log(responseData.success);
         }
     } catch (e) {
         alert(e);
